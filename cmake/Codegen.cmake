@@ -194,7 +194,8 @@ if(INTERN_BUILD_ATEN_OPS)
     )
 
     if(NOT RETURN_VALUE EQUAL 0)
-      message(FATAL_ERROR "Failed to get generated_${gen_type} list")
+      message("GEN_COMMAND_${gen_type}: ${GEN_COMMAND_${gen_type}} --dry-run")
+      message(FATAL_ERROR "Failed to get generated_${gen_type} list\n")
     endif()
 
     include("${CMAKE_BINARY_DIR}/aten/src/ATen/generated_${gen_type}.cmake")
